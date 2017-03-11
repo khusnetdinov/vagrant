@@ -1,0 +1,5 @@
+.vagrant/machines/*
+.vagrant/provisioners/*
+.vagrant/provisioner/temp/*
+.vagrant/provisioner/roles/*
+.vagrant/provisioner/*.retry

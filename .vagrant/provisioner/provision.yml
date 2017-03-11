@@ -1,0 +1,51 @@
+---
+- hosts: all
+  vars_files:
+    - ./settings.yml
+  roles:
+    - role: locale
+      locale_locales: "{{ deploy_locales }}"
+
+    - role: timezone
+      timezone_timezone: "{{ deploy_timezone }}"
+
+- hosts: all
+  vars_files:
+    - ./settings.yml
+  roles:
+    - role: apt
+      apt_upgrade: full
+      apt_install_recommends: yes
+      apt_install_packages: yes
+      apt_packages: "{{ deploy_packages }}"
+
+    - role: postgresql
+      postgresql_version: "{{ deploy_postgres_version }}"
+      postgresql_users:
+        - name: "{{ deploy_postgres_user }}"
+          pass: "{{ deploy_postgres_password }}"
+      postgresql_databases:
+        - name: "{{ deploy_postgres_database }}"
+          owner: "{{ deploy_postgres_user }}"
+          uuid_ossp: yes
+          pgcrypto: yes
+      postgresql_user_privileges:
+        - name: "{{ deploy_postgres_user }}"
+          db: "{{ deploy_postgres_database }}"
+          priv: "ALL"
+
+    - role: redis
+      redis_user: redis
+      redis_bind: 127.0.0.1
+
+    - role: ruby
+      rbenv_user: vagrant
+      ruby_version: "{{ deploy_ruby_version }}"
+
+    - role: elasticsearch
+      elasticsearch_apt_java_package: oracle-java8-installer
+
+  tasks:
+    - name: PostgrSQL grant access for {{ deploy_user }}
+      shell: "psql -U postgres -h localhost -c 'ALTER USER {{ deploy_user }} WITH SUPERUSER'"
+

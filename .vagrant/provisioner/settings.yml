@@ -1,0 +1,47 @@
+# Prepare system
+deploy_locales:
+  - ru_RU.UTF-8
+deploy_timezone: Europe/Moscow
+
+# Provision
+deploy_packages:
+  - autoconf
+  - automake
+  - bison
+  - build-essential
+  - gcc
+  - curl
+  - cmake
+  - exuberant-ctags
+  - git
+  - git-core
+  - libc6-dev
+  - libncurses5-dev
+  - libffi-dev
+  - libreadline6
+  - libreadline6-dev
+  - libreadline-dev
+  - libssl-dev
+  - libtool
+  - libyaml-dev
+  - libxml2-dev
+  - libxslt1-dev
+  - openssl
+  - zlib1g
+  - zlib1g-dev
+  - libpq-dev
+  - nodejs
+  - nodejs-legacy
+  - npm
+  - p7zip-full
+  - imagemagick
+
+deploy_user: "activebilling"
+deploy_postgres_version: 9.4
+deploy_postgres_user: "{{ deploy_user}}"
+deploy_postgres_password: "'password'"
+deploy_postgres_database: "{{ deploy_user }}_development"
+
+# Ruby
+deploy_ruby_version: 2.2.3
+
