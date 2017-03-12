@@ -3,3 +3,5 @@
 .vagrant/provisioner/temp/*
 .vagrant/provisioner/roles/*
 .vagrant/provisioner/*.retry
+
+!.vagrant/provisioner/**/.keep
