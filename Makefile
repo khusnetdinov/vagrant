@@ -8,7 +8,7 @@ ANSIBLE_OPTIONS :=
 
 install:
 	@echo Installing dependensies...
-	ansible-galaxy install -r .vagrant/provision/requirements.yml
+	ansible-galaxy install -r .vagrant/provisioner/requirements.yml
 
 $(INVENTORIES):
 	$(eval INVENTORY := $@)
