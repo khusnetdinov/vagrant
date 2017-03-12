@@ -1,6 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+
 # module Host
   # module OS
     # def self.windows?
@@ -185,3 +186,4 @@ Vagrant.configure("2") do |config|
     # Host::Keys.share
   # end
 end
+

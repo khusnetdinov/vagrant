@@ -1,9 +1,7 @@
-# Prepare system
 deploy_locales:
   - ru_RU.UTF-8
 deploy_timezone: Europe/Moscow
 
-# Provision
 deploy_packages:
   - autoconf
   - automake
@@ -42,6 +40,5 @@ deploy_postgres_user: "{{ deploy_user}}"
 deploy_postgres_password: "'password'"
 deploy_postgres_database: "{{ deploy_user }}_development"
 
-# Ruby
 deploy_ruby_version: 2.2.3
 

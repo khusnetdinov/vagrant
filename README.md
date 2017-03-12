@@ -9,13 +9,13 @@ Vagrant environment and services sandbox for development application. Possible t
 ### Files structure
 ```
 ├── /.vagrant/                  # The source code
-│   ├── /machines/              # Vagrant internal folder 
-│   ├── /provisioners/          # Vagrant internal folder 
+│   ├── /machines/              # Vagrant internal folder
+│   ├── /provisioners/          # Vagrant internal folder
 │   └── /provisioner/           # Main provision folder
 │       ├── /temp/              # Ansible logs
 │       │   └── .keep           # Git keep file
 │       ├── /roles/             # Ansible roles / receipts from ansible-galaxy
-│       │   ├── ....            # Roles 
+│       │   ├── ....            # Roles
 │       │   └── .keep           # Git keep file
 │       ├── ansible.cfg         # Ansible local config
 │       ├── provision.yml       # Ansible playbook linked from VagrantFile

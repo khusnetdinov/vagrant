@@ -8,11 +8,7 @@ ANSIBLE_OPTIONS :=
 
 install:
 	@echo Installing dependensies...
-	ansible-galaxy install -r requirements.yml
-
-provision:
-	@echo Provision ${INVENTORY} configuration...
-	ansible-playbook ${ANSIBLE_OPTIONS} --diff --inventory ./inventories/${INVENTORY}.ini ./playbooks/provision.yml -k -u root
+	ansible-galaxy install -r .vagrant/provision/requirements.yml
 
 $(INVENTORIES):
 	$(eval INVENTORY := $@)
