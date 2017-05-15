@@ -41,6 +41,11 @@ You need to install [Oracle Virtual Box](https://www.virtualbox.org/), [Vagrant 
 
 Optinal: run `vagrant plugin install vagrant-triggers` . Plugin will be installed on first run `vagrant up` or `vagrant provision`
 
+## Sandbox
+
+If you want work on host machine and use services that run in vagrant
+box use `USE_VAGRANT_AS_SERVICES_BOX`.
+
 ## Installation
 
 ### MacOs
@@ -61,7 +66,6 @@ Optinal: run `vagrant plugin install vagrant-triggers` . Plugin will be installe
 
 ## TODO
   - Copy SSH keys ot guest machine
-  - Partial isolation with private network
 
 # License
 

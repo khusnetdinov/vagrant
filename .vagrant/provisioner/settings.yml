@@ -40,5 +40,5 @@ deploy_postgres_user: "{{ deploy_user}}"
 deploy_postgres_password: "'password'"
 deploy_postgres_database: "{{ deploy_user }}_development"
 
-deploy_ruby_version: 2.2.3
+deploy_ruby_version: 2.3.3
 
