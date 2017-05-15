@@ -5,3 +5,6 @@
 .vagrant/provisioner/*.retry
 
 !.vagrant/provisioner/**/.keep
+
+Gemfile.lock
+
