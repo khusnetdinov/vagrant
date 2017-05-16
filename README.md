@@ -46,6 +46,10 @@ Optinal: run `vagrant plugin install vagrant-triggers` . Plugin will be installe
 If you want work on host machine and use services that run in vagrant
 box use `USE_VAGRANT_AS_SERVICES_BOX`.
 
+## SSH keys
+
+Use `ssh-add $ssh_key` for possibility to use it inside vagrant.
+
 ## Installation
 
 ### MacOs
@@ -63,9 +67,6 @@ box use `USE_VAGRANT_AS_SERVICES_BOX`.
 `sudo apt-get install vagrant`
 
 `vagrant plugin install vagrant-triggers`
-
-## TODO
-  - Copy SSH keys ot guest machine
 
 # License
 

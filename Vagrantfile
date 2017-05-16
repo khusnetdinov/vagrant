@@ -119,6 +119,9 @@ Vagrant.configure("2") do |config|
     config.vm.network "private_network", ip: "192.168.33.10"
   end
 
+  # Forward ssh keys to vagrant
+  config.ssh.forward_agent = true
+
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
   # your network.
@@ -141,6 +144,7 @@ Vagrant.configure("2") do |config|
   #   # Customize the amount of memory on the VM:
   #   vb.memory = "1024"
   end
+
 
   # View the documentation for the provider you are using for more
   # information on available options.
